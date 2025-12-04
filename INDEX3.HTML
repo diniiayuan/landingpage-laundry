@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diskon Ebook Laundry</title>
+
+<style>
+    :root{
+      --blue-900: #07245e;
+      --blue-700: #1e40af;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #eef6ff;
+      --muted: #445b75;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, var(--blue-100) 0%, #f7fbff 100%);
+        margin: 0;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        color: var(--blue-900);
+    }
+
+    /* CARD BESAR */
+    .card-wrapper {
+        background: #ffffff;
+        width: 100%;
+        max-width: 850px;
+        border-radius: 12px;
+        padding: 60px 40px;
+        margin: 0 20px;
+        box-shadow: 0 15px 40px rgba(37,99,235,0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        border: none;
+    }
+
+    /* Banner */
+    .top-banner {
+        background: linear-gradient(90deg, rgba(59,130,246,0.12), rgba(96,165,250,0.08));
+        color: var(--blue-700);
+        padding: 14px 25px;
+        font-weight: 600;
+        border-radius: 40px;
+        font-size: 15px;
+        text-align: center;
+        width: fit-content;
+        box-shadow: 0 6px 18px rgba(59,130,246,0.06);
+    }
+
+    /* Title */
+    .title {
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin: 0;
+        color: #000; /* diubah menjadi hitam */
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #000; /* subtitle juga diubah menjadi hitam */
+        margin-top: 15px;
+    }
+
+    /* Card info (biru) */
+    .info-card {
+        background: #f0f7ff;
+        border: 3px solid var(--blue-600);
+        padding: 25px;
+        border-radius: 12px;
+        display: flex;
+        gap: 18px;
+        width: 100%;
+        max-width: 700px;
+        align-items: flex-start;
+        box-shadow: 0 8px 24px rgba(59,130,246,0.06);
+    }
+
+    .check-icon {
+        background: var(--blue-600);
+        color: white;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 2px;
+        flex-shrink: 0;
+        box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+    }
+
+    .info-text h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--blue-900);
+    }
+
+    .info-text p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* responsive */
+    @media (max-width:600px){
+      .card-wrapper{ padding:28px 20px; border-radius:14px; margin:0 12px; }
+      .title h1{ font-size:28px; }
+      .info-card{ flex-direction: row; gap:12px; padding:18px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="card-wrapper">
+
+    <div class="top-banner">
+       ✨ Diskon E-book Laundry · Dapatkan Sekarang Sebelum Kehabisan!
+    </div>
+
+    <div class="title">
+        <h1>Anda tinggal selangkah lagi untuk membuka<br>akses penuh ke e-book ini.</h1>
+        <p class="subtitle">
+           Selesaikan pembayaran dan mulai <b>tingkatkan keuntungan bisnis laundry Anda.</b>
+        </p>
+    </div>
+
+    <div class="info-card">
+        <div class="check-icon">✔</div>
+
+        <div class="info-text">
+            <h3>Lebih dari 500 pengusaha laundry pemula sudah merasakan manfaatnya.</h3>
+            <p>
+             E-book ini menjadi panduan rahasia yang mempercepat pencapaian Balik Modal (BEP), lengkap dengan template siap pakai.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

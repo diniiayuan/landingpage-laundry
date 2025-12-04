@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ Bisnis Laundry</title>
+  <style>
+    :root{
+      --primary:#0ea5e9;
+      --bg:#f0f9ff;
+      --white:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --radius:20px;
+    }
+    body{font-family:Inter, sans-serif;background:var(--bg);margin:0;padding:24px;color:var(--text)}
+    .container{max-width:900px;margin:0 auto}
+    .section-title{font-size:26px;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:22px}
+    .section-title span{font-size:30px;color:var(--primary)}
+
+    .faq-box{background:var(--white);padding:22px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.05);margin-bottom:16px;cursor:pointer;transition:.2s}
+    .faq-box:hover{transform:translateY(-2px)}
+
+    .faq-q{font-size:17px;font-weight:700;margin:0;display:flex;justify-content:space-between;align-items:center}
+    .faq-a{margin-top:14px;font-size:15px;color:var(--muted);line-height:1.6;display:none}
+    .open .faq-a{display:block}
+    .icon{font-size:22px;color:var(--primary);}
+    .open .icon{transform:rotate(45deg);} 
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="text-align:center;"$1><span>❓</span> FAQ Bisnis Laundry</h2>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 E-book ini cocok untuk pemula?<span class="icon">＋</span></p>
+      <div class="faq-a">Cocok banget! Meski kamu belum pernah buka usaha, tinggal ikuti langkah-langkahnya.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Butuh modal besar untuk mulai laundry?<span class="icon">＋</span></p>
+      <div class="faq-a">Enggak. E-book ini ajarin cara mulai dari modal kecil dan beli peralatan yang penting saja.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Cocok untuk pemula yang belum punya      pengalaman?<span class="icon">＋</span></p>
+      <div class="faq-a">Sangat cocok. Semua langkah dijelaskan dari dasar, jadi yang belum pernah buka usaha pun bisa langsung paham dan praktek.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Apakah butuh modal besar?<span class="icon">＋</span></p>
+      <div class="faq-a">Tidak. Kamu bisa mulai dari skala kecil rumahan dengan membeli peralatan inti saja sesuai panduan di e-book.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Apakah e-book ini membantu menghitung harga & keuntungan?<span class="icon">＋</span></p>
+      <div class="faq-a">Ya. Ada formula harga, cara menghindari rugi, dan spreadsheet BEP untuk hitung balik modal otomatis.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 File e-book dikirim lewat apa?<span class="icon">＋</span></p>
+      <div class="faq-a">Setelah pembayaran, kamu dapat link download via WhatsApp atau Email. Format PDF, bisa dibuka di HP.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Ada garansi uang kembali?<span class="icon">＋</span></p>
+      <div class="faq-a">Ada! Kamu mendapat **7 hari garansi refund** tanpa syarat khusus untuk Paket Komplit.</div>
+    </div>
+
+    <div class="faq-box" onclick="toggle(this)">
+      <p class="faq-q">🤔 Kenapa harus beli sekarang?<span class="icon">＋</span></p>
+      <div class="faq-a">Karena promo & bonus terbatas hanya untuk pembeli tercepat. Jika kuota habis, harga kembali normal.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggle(el){ el.classList.toggle('open'); }
+  </script>
+</body>
+</html>

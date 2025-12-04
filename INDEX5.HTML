@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garansi + Testimoni + Promo</title>
+
+  <style>
+    :root{
+      --blue-900: #07245e;
+      --blue-700: #1e40af;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #eef6ff;
+      --muted: #445b75;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, var(--blue-100) 0%, #f7fbff 100%);
+      color: var(--blue-900);
+    }
+
+    /* ==========================
+        WRAPPER BESAR (KOTAK)
+    ========================== */
+    .main-box {
+      background: #ffffff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 6px 30px rgba(37,99,235,0.08);
+      border: 1px solid rgba(59,130,246,0.06);
+    }
+
+    /* GARANSI ATAS */
+    .garansi-box {
+      background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(96,165,250,0.03));
+      border: 1.5px solid var(--blue-600);
+      padding: 14px 20px;
+      border-radius: 14px;
+      width: max-content;
+      margin: 0 auto;
+      color: var(--blue-700);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .garansi-text {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* TESTIMONI */
+    .testi-card {
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.06);
+      max-width: 500px;
+      margin: 24px auto;
+      border: 1px solid rgba(59,130,246,0.04);
+    }
+
+    .testi-name {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--blue-900);
+    }
+
+    .testi-text {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* PROMO */
+    .promo-banner {
+      background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(99,102,241,0.02));
+      border: 1.5px solid rgba(59,130,246,0.12);
+      padding: 14px 18px;
+      border-radius: 14px;
+      max-width: 500px;
+      margin: 0 auto 30px auto;
+      font-size: 14px;
+      color: var(--blue-700);
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5;
+      box-shadow: 0 8px 30px rgba(37,99,235,0.06);
+    }
+
+    /* ==========================
+       2 KOLOM — DESAIN PERTAMA
+    ========================== */
+
+    .section-container {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      align-items: flex-start;
+    }
+
+    .col-box {
+      flex: 1;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 18px;
+      border: 1.5px solid rgba(59,130,246,0.04);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.04);
+      min-width: 240px;
+    }
+
+    .col-title {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue-700);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .col-subtext {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #223;
+      line-height: 1.5;
+    }
+
+    .icon-check {
+      font-size: 18px;
+      color: var(--blue-600);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-num {
+      background: var(--blue-600);
+      color: white;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+    }
+
+    /* NOTE kecil */
+    .small-note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .main-box { 
+        padding: 18px;
+        max-width: 92%;
+      }
+      /* tetap kolom jadi tumpuk di tablet */
+      .section-container { gap: 16px; flex-direction: column; }
+      .promo-banner {
+        padding: 12px 14px;
+        font-size: 13px;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      .testi-card {
+        max-width: 100%;
+        margin: 18px 0;
+        padding: 14px;
+      }
+      .garansi-box {
+        font-size: 14px;
+        padding: 10px 14px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    /* Untuk layar hp: tampilkan kanan-kiri (side-by-side) dan perkecil tulisan agar muat */
+    @media (max-width: 720px) {
+      .main-box {
+        padding: 12px;
+        border-radius: 12px;
+        max-width: 100%;
+      }
+
+      /* tampilkan 2 kolom berdampingan, kecilkan font agar muat tanpa geser */
+      .section-container {
+        flex-direction: row;
+        gap: 10px;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        align-items: flex-start;
+      }
+
+      /* dua kolom berdampingan: masing-masing mengambil 50% lebar */
+      .col-box {
+        flex: 1 1 50%;
+        min-width: 0; /* biarkan konten mengecil */
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 6px 14px rgba(37,99,235,0.03);
+        border: 1px solid rgba(59,130,246,0.03);
+      }
+
+      /* jangan tukar urutan pada hp — tetap kanan/kiri langsung terlihat */
+      .section-container > .col-box:first-child { order: 0; }
+      .section-container > .col-box:nth-child(2) { order: 1; }
+
+      /* perkecil tipografi agar muat */
+      .col-title { font-size: 15px; }
+      .col-subtext { font-size: 12px; }
+      .list-item { font-size: 13px; gap: 8px; }
+      .icon-check { font-size: 15px; }
+      .step-num { width: 24px; height: 24px; font-size: 11px; }
+
+      .testi-name { font-size: 13px; }
+      .testi-text { font-size: 12px; }
+
+      /* pastikan elemen lain tetap proporsional */
+      .promo-banner { font-size: 13px; padding: 10px 12px; }
+      .garansi-box { font-size: 13px; padding: 8px 12px; width: 100%; box-sizing: border-box; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-box">
+
+    <!-- GARANSI UTAMA -->
+    <div class="garansi-box">
+      ♡ Garansi 7 hari & panduan bisnis minim risiko.
+    </div>
+
+    <p class="garansi-text">
+      Dengan melanjutkan pembayaran, Anda setuju pada S&K Laundry Sukses.<br>
+      Data pribadi Anda tetap aman dan terlindungi.
+    </p>
+
+    <!-- TESTIMONI -->
+    <div class="testi-card" role="region" aria-label="Testimoni pelanggan">
+      <div class="testi-name">👨‍💼 Bpk. Joko  – Banjarmasin</div>
+      <div class="testi-text">
+     “Panduan SOP-nya detail banget. Alur kerja jadi jauh lebih rapi baju hilang atau noda terlewat sekarang sudah gak pernah terjadi.”
+      </div>
+    </div>
+
+    <!-- PROMO -->
+    <div class="promo-banner" role="note" aria-label="Promo">
+     🎁 Bonus Eksklusif Hari Ini Saja!
+E-book + Template kerja profesional.
+Promo terbatas, stok hampir habis!
+    </div>
+
+    <!-- ============ 2 KOLOM ============= -->
+    <div class="section-container">
+
+      <!-- KOLOM KIRI -->
+      <div class="col-box" aria-label="Garansi Uang Kembali">
+        <div class="col-title">🛡 Garansi Uang Kembali  7 Hari</div>
+
+        <div class="col-subtext">
+          Tidak cocok? Materi kurang relevan?
+        </div>
+
+        <div class="list-item">
+          <div class="icon-check">💸</div>
+          <div>Uang Anda kembali tanpa ribet.</div>
+        </div>
+
+        <div class="list-item">
+          <div class="icon-check">💬</div>
+          <div>Ada konsultasi dasar bila butuh arahan.</div>
+        </div>
+
+        <div class="list-item">
+          <div class="icon-check">⚡</div>
+          <div>Proses pengajuan cepat & transparan.</div>
+        </div>
+
+        <div class="small-note">
+          *Syarat & ketentuan berlaku. Garansi hanya untuk konten & relevansi materi.
+        </div>
+      </div>
+
+      <!-- KOLOM KANAN -->
+      <div class="col-box" aria-label="Cara Mendapatkan E-book & Bonus">
+        <div class="col-title">📲 Cara Pemesanan</div>
+
+        <div class="col-subtext">Cukup ikuti langkah mudah berikut:</div>
+
+        <div class="list-item">
+          <div class="step-num">1</div>
+          <div>Isi Email & WhatsApp aktif pada formulir.</div>
+        </div>
+
+        <div class="list-item">
+          <div class="step-num">2</div>
+          <div>Klik <strong>"LANJUTKAN PEMBAYARAN"</strong>.</div>
+        </div>
+
+        <div class="list-item">
+          <div class="step-num">3</div>
+          <div>Pilih metode pembayaran (Transfer/QRIS/E-Wallet).</div>
+        </div>
+
+        <div class="list-item">
+          <div class="step-num">4</div>
+          <div>Ikuti instruksi pembayaran.</div>
+        </div>
+
+        <div class="list-item">
+          <div class="step-num">5</div>
+          <div>
+            E-book & bonus langsung dikirim otomatis ke Email.
+          </div>
+        </div>
+
+        <div class="small-note">
+          Jika 5–10 menit belum masuk, hubungi: <strong>admin@laundrysukses.com</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

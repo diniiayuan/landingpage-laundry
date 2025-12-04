@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilihan Paket</title>
+
+<style>
+    :root{
+        --blue-900: #07245e;
+        --blue-700: #1e40af;
+        --blue-600: #2563eb;
+        --blue-500: #3b82f6;
+        --blue-100: #eef6ff;
+        --muted: #445b75;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, var(--blue-100) 0%, #f7fbff 100%);
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .packages-wrapper {
+        width: 100%;
+        max-width: 980px;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 12px 40px rgba(37,99,235,0.06);
+        border: 1px solid rgba(59,130,246,0.06);
+    }
+
+    .title-section { 
+        margin-bottom: 30px;
+    }
+    .title-section h1 { 
+        font-size: 32px; 
+        margin: 0 0 10px;
+        font-weight: 800;
+    }
+    .title-section p { 
+        font-size: 16px; 
+        color: var(--muted); 
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .pricing-column {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 32px;
+        margin-top: 20px;
+    }
+
+    .pricing-box {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 28px;
+        border: 2px solid #e5e7eb;
+        transition: .25s;
+        box-shadow: 0 6px 18px rgba(37,99,235,0.04);
+        cursor: pointer;
+        position: relative;
+    }
+    .pricing-box:hover { transform: translateY(-4px); }
+
+    .pricing-box.active {
+        border-color: var(--blue-600);
+        background: rgba(59,130,246,0.03);
+    }
+
+    .inside-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .pricing-box h3 { 
+        font-size: 22px; 
+        margin: 0;
+        font-weight: 700;
+        color: var(--blue-900);
+    }
+    .pricing-box p { 
+        font-size: 15px; 
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+    }
+
+    .right-price {
+        padding-top: 12px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .price { 
+        font-size: 28px; 
+        font-weight: 800;
+        margin: 0 0 4px;
+        color: var(--blue-600);
+    }
+    .price-small { 
+        font-size: 13px; 
+        color: var(--muted);
+    }
+
+    .info-box {
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 12px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        display: block;
+        transition: .25s;
+    }
+
+    .info-box strong { 
+        font-size: 15px; 
+        display: block;
+        margin-bottom: 10px;
+        color: var(--blue-900);
+    }
+    .info-box ul { 
+        margin: 0;
+        padding-left: 20px;
+    }
+    .info-box li { 
+        font-size: 14px; 
+        margin-bottom: 8px;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+    .info-box.active {
+        border-color: var(--blue-500);
+        background: var(--blue-100);
+    }
+
+    .badge{
+        position: absolute;
+        top: -12px; left: 50%;
+        transform: translateX(-50%);
+        background: var(--blue-600);
+        color: #fff;
+        padding: 4px 10px; /* lebih kecil */
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 900px) {
+        .pricing-column { 
+            grid-template-columns: 1fr; 
+            gap: 24px;
+        }
+    }
+
+    /* Desain HP: card kanan-kiri (side-by-side) TANPA SCROLL */
+    @media (max-width: 768px) {
+      .packages-wrapper {
+        padding: 18px;
+      }
+      .title-section { margin-bottom: 24px; }
+      .title-section h1 { 
+        font-size: 24px; 
+      }
+      .title-section p { 
+        font-size: 14px; 
+      }
+
+      .pricing-column { 
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .pricing-box {
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(37,99,235,0.03);
+      }
+
+      .inside-flex { 
+        gap: 12px;
+      }
+      .pricing-box h3 { 
+        font-size: 16px; 
+        margin: 0;
+      }
+      .pricing-box p { 
+        font-size: 12px; 
+        line-height: 1.4;
+      }
+
+      .price { 
+        font-size: 20px; 
+       }
+      .price-small { 
+        font-size: 11px; 
+       }
+      .right-price { 
+        margin-top: 10px;
+        padding-top: 10px;
+       }
+
+      .info-box {
+        margin-top: 12px;
+        padding: 12px;
+        font-size: 12px;
+      }
+      .info-box strong { 
+        font-size: 13px; 
+      }
+      .info-box ul { 
+        margin: 8px 0 0 16px; 
+      }
+      .info-box li { 
+        font-size: 11px; 
+        margin-bottom: 5px;
+      }
+
+      .badge { 
+        padding: 3px 10px;
+    font-size: 9px;
+    top: -6px;
+    border-radius: 20px; 
+    white-space: nowrap;
+    transform: translateX(-50%);
+    }
+    
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="packages-wrapper">
+  <div class="title-section">
+      <h1>Ingat lagi perbedaannya sebelum memilih 😊</h1>
+      <p>Pilih paket terbaik sesuai kebutuhan Anda.</p>
+  </div>
+
+  <div class="pricing-column">
+
+      <!-- Paket 1 -->
+      <div class="pricing-box" data-info="info1">
+        <div class="inside-flex">
+            <div>
+                <h3>Paket Hemat</h3>
+                <p>
+                    Akses penuh ke materi E-book dasar.<br>
+                    Strategi modal kecil.<br>
+                    Panduan operasional inti.<br>
+                    <b>(Tanpa bonus template.)</b>
+                </p>
+            </div>
+
+            <div class="right-price">
+                <p class="price">Rp 100.000</p>
+                <span class="price-small">sekali bayar</span>
+            </div>
+        </div>
+
+        <!-- Kotak Tambahan - SELALU TAMPIL -->
+        <div id="info1" class="info-box">
+            <strong>Isi Paket Hemat:</strong>
+            <ul style="margin:6px 0 0 18px;">
+                <li>E-book dasar strategi laundry rumahan.</li>
+                <li>Panduan langkah awal membuka laundry.</li>
+                <li>Teknik hemat modal operasional.</li>
+                <li>Cocok untuk pemula yang ingin mulai cepat.</li>
+            </ul>
+        </div>
+
+      </div>
+
+      <!-- Paket 2 -->
+      <div class="pricing-box featured" data-info="info2">
+          <div class="badge">PALING BANYAK DIPILIH</div>
+
+          <div class="inside-flex">
+              <div>
+                  <h3>⭐ Paket Premium + Bonus</h3>
+                  <p>
+                    Semua materi lengkap dalam E-book.<br>
+                    + 3 Bonus Template siap pakai.
+                  </p>
+              </div>
+              <div class="right-price">
+                   <p class="price">Rp 149.000</p>
+                   <span class="price-small">sekali bayar • akses seumur hidup</span>
+               </div>
+           </div>
+
+          <!-- Kotak Tambahan - SELALU TAMPIL -->
+          <div id="info2" class="info-box">
+              <strong>Yang Anda Dapat di Paket Lengkap (Rp149.000):</strong>
+              <ul style="margin:6px 0 0 18px;">
+                  <li>E-book Utama: "Cepat Balik Modal".</li>
+                  <li>Template SOP Operasional Laundry (Rp99.000).</li>
+                  <li>Spreadsheet BEP & Balik Modal (Rp75.000).</li>
+                  <li>Checklist Peralatan & Merek (Rp50.000).</li>
+                  <li>Garansi panduan teruji 7 hari.</li>
+              </ul>
+          </div>
+
+      </div>
+
+  </div>
+</div>
+
+<script>
+    const boxes = document.querySelectorAll('.pricing-box');
+    const infoBoxes = document.querySelectorAll('.info-box');
+
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+
+            boxes.forEach(b => b.classList.remove('active'));
+            infoBoxes.forEach(i => i.classList.remove('active'));
+
+            box.classList.add('active');
+            document.getElementById(box.dataset.info).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
